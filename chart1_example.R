@@ -1,3 +1,6 @@
+library(tidyverse)
+library(dplyr)
+
 US_pj_rates <- read.csv("us-prison-jail-rates.csv")
   
 Los_Angeles_rates <- US_pj_rates %>%
