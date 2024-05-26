@@ -1,5 +1,5 @@
 ---
-title: "A3: Incarceration"
+title: "A5: Incarceration"
 output: html_document
 ---
 
@@ -11,7 +11,7 @@ An introduction of the problem domain and a description of the variable(s) you a
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
+These will likely be calculated using your DPLYR skills, answering questions such as:
 
 - What is the average value of my variable across all the counties (in the current year)?
 - Where is my variable the highest / lowest?
@@ -21,13 +21,38 @@ Feel free to calculate and report values that you find relevant. Again, remember
 
 ### The Dataset
 
-Who collected the data?  
+Who collected the data? 
+
+Vera: Institute of Justice organization. Specifically, Oliver Hinds, Olive Lu, James Wallace-Lee, and Jacob Kang-Brown. 
+
 How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
+
+The data was collected from multiple sources. The sources include the National Corrections Reporting Program (NCRP). The data also includes data from the U.S. Census Bureau and the Centers for Disease Control and Prevention, the U.S. Department of Agriculture, and the U.S. census Bureau. The final four data sources are used to estimate population and geographical information for the dataset. 
+
+Why was the data collected? 
+
+
+
+How many observations (rows) are in your data? 
+
+```{r}
+prison_population <- read.csv("us-prison-pop.csv")
+nrow(prison_population)
+```
+153811 rows
+
 How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+```{r}
+ncol(prison_population)
+```
+36 columns 
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+A question of power I need to consider when working with the data is the large age range being evaluated for prisoners. The prisoners being evaluated are between the ages of 15-64. Fifteen year olds are legally considered a minor. By having such a large age range between prisoners seems irrelevant for the data as it looks at the total population of prisoners and race demographic. However, as depicted in the documentary "13th" Black youth are depicted as adults due to racial discrimination. As a result by limiting the data to a singular age range connects youth with adults. 
+
 What are possible limitations or problems with this data?   (at least 200 words)
+
 
 
 ### Trends Over Time Chart
@@ -46,7 +71,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
 ### Variable Comparison Chart
