@@ -74,6 +74,11 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
+
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
+```
+
+
 ### Variable Comparison Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
