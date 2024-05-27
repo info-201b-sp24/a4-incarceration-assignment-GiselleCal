@@ -7,13 +7,14 @@ output: html_document
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
-The data set I have chosen to use is the us.prison-jail-rates.csv. Specifically I will be looking at the prison rates for the total population variables I have chosen analyze are the
+The data set I have chosen to use is the us.prison-jail-rates.csv. Specifically I will be looking at the prison rates for the total population variables, focusing on the Latinx, Black, and White population and how geographical location affects the prisoner's rate while also remaining consistent with the racial inequalities shown within the legal system, favoring white individuals over BIPOC citizens. 
+
+I have chosen to focus on the Latinx, Black, and white population due to the inequalities highlighted in the documentary "13th", within the documentary the explanation of racial discrimination across America varies in severity in the legal system depending on the geographical location. As a result I aim to strive to show the consistency in racial discrimination across and the numerous geographical boundaries associated with incarceration rate. 
 
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
+Overall, population and geographical location are not the only factors but political affiliation plays a large role in the rate of incarcerated BIPOC individuals. The overall average value of Black prisoners exceeds both white and Latinx despite geographical location and political association. As explained within the 13th documentary a larger portion of racially based crimes and arrests occur within southern states. Looking to the states which had the highest rate of Latinx and Black prisoners rate the US in 2015, the results showed Nebraska (Latinx) and North Carolina (Black) as the states with the highest prisoner rate for BIPOC individuals. Another trend which occured with the data was the urbanicicty rate remained fairly conistent between the highest ranking BIPOC rates remaining between rural and small/mid size counties as depcited in summary question four and five. Overall, there seems to be a reduction in the maximum amount of Black individuals entering incarceration as depicted in the third and second question. 
 
   - What is the average value of black_prison_pop_rate, white_prison_pop_rate, latine_prison_pop_rate across all the counties in CA (in 2015)?
   - What is black_prison_pop_rate the highest in CA in 1995 and 2015?
@@ -33,22 +34,22 @@ Vera: Institute of Justice organization. Specifically, Oliver Hinds, Olive Lu, J
 
 How was the data collected or generated?  
 
-The data was collected from multiple sources. The sources include the National Corrections Reporting Program (NCRP). The data also includes data from the U.S. Census Bureau and the Centers for Disease Control and Prevention, the U.S. Department of Agriculture, and the U.S. census Bureau. The final four data sources are used to estimate population and geographical information for the dataset. 
+The data was collected from multiple sources. The sources include the National Corrections Reporting Program (NCRP). The data also includes data from the U.S. Census Bureau and the Centers for Disease Control and Prevention, the U.S. Department of Agriculture, and the U.S. census Bureau. Data was also collected with information from the Annual Survey of Jails (ASJ), Census of Jails, and the Death in Custody Reporting Program (DCRP). The final four data sources are used to estimate population and geographical information for the data set. 
 
 Why was the data collected? 
 
-
+The data was originally collected to show the difference between state and county decision making on incarcerations rather than a united entity. The data further analysis racial trends within the incarceration data and how they vary based on county rather than state. 
 
 How many observations (rows) are in your data? 
 
 ```{r}
-prison_population <- read.csv("us-prison-pop.csv")
-nrow(prison_population)
+prison_rate <- read.csv("us-prison-jail-rates.csv")
+nrow(prison_rate)
 ```
 
 How many features (columns) are in the data?  
 ```{r}
-ncol(prison_population)
+ncol(prison_rate)
 ```
 
 What, if any, ethical questions or questions of power do you need to consider when working with this data?
@@ -57,42 +58,31 @@ A question of power I need to consider when working with the data is the large a
 
 What are possible limitations or problems with this data?   (at least 200 words)
 
-
+Possible limitations associated with the data include missing variables based on year and county. Many of the variables throughout the dataset are labeled ‘NA’. In previous readings the incorporation of NA variables can lead to misinterpretation of the data as a whole. The NA data is due to lack of public information, sully concerning the older dates pre 1990s; however, there were a few dates post 2010s that included missing data. This may be due to a number of reasons such as age of data and size of the county.  For example in my summary I include the overall average rate change between all County and State data for Latinx, White and Black prisoners. However, I needed to exclude data including NA to obtain the mean of each racial demographic.  My research is greatly based on the filtering of the data I had to go through in order to find a County, Year, State that coincides with the Latinx, White, and Black prisoner rate. Another limitation from the data is the lack of immediate legend describing the rate change of the data. The codex offered alongside the data requires pages of reading to fully interpret the data set. However, extensive reading can pose accessibility issues for people attempting to explore the data. The codex should include a table and quick explanations to the data being presented as an effective overview of the data collected. 
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+The chart I have chosen to create to demonstrate the change in prisoner rates between Black, Latinx, and White prisoners is a Line Chart. I chose a line chart to efficiently follow the trend between 1995-2025. I chose to focus on California for my information to depiction the racial disparity continues to lean largely towards minority groups such as Black Americans with the West Coast. Focusing on the largest urbanely populated county in California allows for a wide set of data to compare with a restricted frame. The green line on the chart represents the Black prisoner rate, the red colored line represents Latinx prison population, and the blue colored line represents the white prisoner rate. A consistent trend within the data along with the readings and the 13th film documents is the large inequality between racial groups. As depicted from the chart, Black prison rates remains double the growth rate of white prisoner growth rate.  
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
 
 ```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
 ### Variable Comparison Chart
 
+The second graph depicts the Top 10 Most Populated CA Prisons by County (Black Prisoner Rate) in 2015. here I explore population and rate between Black prisoner rate and total population rate in County prison population. A pattern from the data is the larger most densely populated county (Los Angeles) remain consistent with the high rates of incarcerated Black prisoners remaining high with the previous trend line.  
+
+
 ```{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
 ### Map
 
+Rather than a pattern I found an inconsistency within my data. The three counties with the highest prison rate of Black prisoners in 2015 where Tehama County (rural), Lake County (rural), Shasta County (small/mid), as depicted by the red dots. The largest rate of change occurred in rural and small/mid. Due to this inconsistency I further investigated the possible reasoning behind the outcome and came upon the electoral results from the 2020 election. Tehama and Shasta are considered conservative counties with the state of California. Due to this revelation the highest prison rate of Black prisoners in 2015 remains consistent within the lengths of geographical location based on political association rather than population.  
+
+link: https://www.kcra.com/article/california-election-results-2020-county-map/34922105
+
+
 ```{r, echo = FALSE, code = readLines("map_example.R")}
 ```
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
 
