@@ -5,8 +5,6 @@ output: html_document
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
-
 The data set I have chosen to use is the us.prison-jail-rates.csv. Specifically I will be looking at the prison rates for the total population variables, focusing on the Latinx, Black, and White population and how geographical location affects the prisoner's rate while also remaining consistent with the racial inequalities shown within the legal system, favoring white individuals over BIPOC citizens. 
 
 I have chosen to focus on the Latinx, Black, and white population due to the inequalities highlighted in the documentary "13th", within the documentary the explanation of racial discrimination across America varies in severity in the legal system depending on the geographical location. As a result I aim to strive to show the consistency in racial discrimination across and the numerous geographical boundaries associated with incarceration rate. 
@@ -14,7 +12,7 @@ I have chosen to focus on the Latinx, Black, and white population due to the ine
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-Overall, population and geographical location are not the only factors but political affiliation plays a large role in the rate of incarcerated BIPOC individuals. The overall average value of Black prisoners exceeds both white and Latinx despite geographical location and political association. As explained within the 13th documentary a larger portion of racially based crimes and arrests occur within southern states. Looking to the states which had the highest rate of Latinx and Black prisoners rate the US in 2015, the results showed Nebraska (Latinx) and North Carolina (Black) as the states with the highest prisoner rate for BIPOC individuals. Another trend which occured with the data was the urbanicicty rate remained fairly conistent between the highest ranking BIPOC rates remaining between rural and small/mid size counties as depcited in summary question four and five. Overall, there seems to be a reduction in the maximum amount of Black individuals entering incarceration as depicted in the third and second question. 
+Overall, population and geographical location are not the only factors but political affiliation plays a large role in the rate of incarcerated BIPOC individuals. The overall average value of Black prisoners exceeds both white and Latinx despite geographical location and political association. As explained within the 13th documentary a larger portion of racially based crimes and arrests occur within southern states. Looking to the states which had the highest rate of Latinx and Black prisoners rate the US in 2015, the results showed Nebraska (Latinx) and North Carolina (Black) as the states with the highest prisoner rate for BIPOC individuals. Another trend which occured with the data was the urbanicicty rate remained fairly conistent between the highest ranking BIPOC rates remaining between rural and small/mid size counties as depcited in summary question four and five. Overall, there seems to be a reduction in the maximum amount of Black individuals entering incarceration as depicted in the third and second question.
 
   - What is the average value of black_prison_pop_rate, white_prison_pop_rate, latine_prison_pop_rate across all the counties in CA (in 2015)?
   - What is black_prison_pop_rate the highest in CA in 1995 and 2015?
