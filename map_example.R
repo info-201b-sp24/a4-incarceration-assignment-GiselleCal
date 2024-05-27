@@ -24,29 +24,9 @@ CA_counties <- CA_map %>%
   
 joined_CA_counties <- left_join(CA_counties, CA_counties_data, by = "county_name") 
 
-ggplot(joined_CA_counties) +
-  geom_polygon(
-    mapping = aes(x = long, y = lat, group = group),
-    color = "white",
-    size = .1
-  ) +
-  coord_map() + 
-  scale_fill_continuous(low = "#132B43", high = "Red") +
-  data = BP_Rates +
-  labs(fill = "black_prison_pop_rate") 
-
-
 top_3_BP <- filtered_select_rates %>%
   top_n(3, wt = black_prison_pop_rate) %>%
   arrange(black_prison_pop_rate)
-
-top_3_LP <- filtered_select_rates %>%
-  top_n(3, wt = latinx_prison_pop_rate) %>%
-  arrange(latinx_prison_pop_rate)
-
-top_3_WP <- filtered_select_rates %>%
-  top_n(3, wt = white_prison_pop_rate) %>%
-  arrange(white_prison_pop_rate)
 
 BP_Rates <- data.frame(
   county = c("Tehama County", "Lake County", "Shasta County"),
@@ -61,17 +41,5 @@ ggplot(joined_CA_counties) +
      mapping = aes(x = long, y = lat),
      color = "red"
    ) +
-   coord_map()
- 
- LP_Rates <- data.frame(
-   county = c("Tehama County", "Yuba County" ),
-   lat = c(40.46801,),
-   long = c(-121.5014,)
- )
- 
- WP_Rates <- data.frame(
-   county = c("Tehama County", "Shasta County"),
-   lat = c(40.46801, 41.20139, ),
-   long = c(-121.5014,-121.4670, )
- )
- 
+   coord_map() +
+  labs( title = "Top 3 CA Counties With Highest Black Prisoner Rate (2015)")

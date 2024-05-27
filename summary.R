@@ -50,4 +50,15 @@ filtered_select_rates %>%
   top_n(1, wt = latinx_prison_pop_rate) %>%
   select("urbanicity")
 
-"What was the variable with the largest rate over all the counties in CA in 2015?" 
+"Which urbanicities and state had the highest rate of latinx and black prisoners rate the US in 2015?" 
+
+new_select_rates <- select_rates %>%
+  subset(year == c("2015")) 
+         
+new_select_rates %>%
+  top_n(1, wt = black_prison_pop_rate) %>%
+  select("state")
+
+new_select_rates %>%
+  top_n(1, wt = latinx_prison_pop_rate) %>%
+  select("state")

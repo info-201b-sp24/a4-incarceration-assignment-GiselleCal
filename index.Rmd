@@ -19,13 +19,11 @@ These will likely be calculated using your DPLYR skills, answering questions suc
   - What is black_prison_pop_rate the highest in CA in 1995 and 2015?
   - What is black_prison_pop_rate the lowest in CA in 1995 and 2015?
   - Which urbanicities had the highest rate of latinx and black prisoners rate in CA in 2015?
-  - 
+  - Which urbanicities and state had the highest rate of latinx and black prisoners rate the US in 2015? 
+  
 
 ```{r, echo = FALSE, code = readLines("summary.R")}
 ```
-
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
 ### The Dataset
 
@@ -55,7 +53,7 @@ ncol(prison_population)
 
 What, if any, ethical questions or questions of power do you need to consider when working with this data?
 
-A question of power I need to consider when working with the data is the large age range being evaluated for prisoners. The prisoners being evaluated are between the ages of 15-64. Fifteen year olds are legally considered a minor. By having such a large age range between prisoners seems irrelevant for the data as it looks at the total population of prisoners and race demographic. However, as depicted in the documentary "13th" Black youth are depicted as adults due to racial discrimination. As a result by limiting the data to a singular age range connects youth with adults. 
+A question of power I need to consider when working with the data is the large age range being evaluated for prisoners. The prisoners rate being evaluated are between the ages of 15-64. Fifteen year olds are legally considered a minor. By having such a large age range between prisoners seems irrelevant for the data as it looks at the total population of prisoners and race demographic. However, as depicted in the documentary "13th" Black youth are depicted as adults due to racial discrimination. As a result by limiting the data to a singular age range connects youth with adults. 
 
 What are possible limitations or problems with this data?   (at least 200 words)
 
@@ -86,6 +84,9 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```
 
 ### Map
+
+```{r, echo = FALSE, code = readLines("map_example.R")}
+```
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
