@@ -7,15 +7,23 @@ output: html_document
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
+The data set I have chosen to use is the us.prison-jail-rates.csv. Specifically I will be looking at the prison rates for the total population variables I have chosen analyze are the
+
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
 These will likely be calculated using your DPLYR skills, answering questions such as:
 
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
+  - What is the average value of black_prison_pop_rate, white_prison_pop_rate, latine_prison_pop_rate across all the counties in CA (in 2015)?
+  - What is black_prison_pop_rate the highest in CA in 1995 and 2015?
+  - What is black_prison_pop_rate the lowest in CA in 1995 and 2015?
+  - Which urbanicities had the highest rate of latinx and black prisoners rate in CA in 2015?
+  - 
+
+```{r, echo = FALSE, code = readLines("summary.R")}
+```
+
 
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
@@ -39,13 +47,11 @@ How many observations (rows) are in your data?
 prison_population <- read.csv("us-prison-pop.csv")
 nrow(prison_population)
 ```
-153811 rows
 
 How many features (columns) are in the data?  
 ```{r}
 ncol(prison_population)
 ```
-36 columns 
 
 What, if any, ethical questions or questions of power do you need to consider when working with this data?
 
